@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engenharia do Destino | 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Rajdhani', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                dark: '#0B0F1A',     // Fundo principal
+                card: '#141A2E',     // Fundo secundário
+                gold: '#D4A94E',     // Cor de destaque
+                text: '#F2F2F2',     // Texto principal
+                muted: '#9CA3AF',    // Texto secundário
+              }
+            },
+            backgroundImage: {
+              'hero-glow': 'conic-gradient(from 90deg at 50% 50%, #0B0F1A 0%, #141A2E 50%, #0B0F1A 100%)',
+            },
+            letterSpacing: {
+              'ultra': '0.25em',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0B0F1A;
+        color: #F2F2F2;
+        /* Adiciona textura de ruído sutil para acabamento premium */
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+      }
+      .glass-panel {
+        background: rgba(11, 15, 26, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(212, 169, 78, 0.08);
+      }
+      .text-glow {
+        text-shadow: 0 0 30px rgba(212, 169, 78, 0.3);
+      }
+      /* Scrollbar premium */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0B0F1A;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #141A2E;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #D4A94E;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
