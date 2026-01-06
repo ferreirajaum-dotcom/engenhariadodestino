@@ -40,8 +40,8 @@ const itemVariants: Variants = {
 };
 
 export default function App() {
-  const scrollToPricing = () => {
-    console.log("Scrolling to checkout");
+  const handleCheckout = () => {
+    window.open("https://pay.kiwify.com.br/OyJ2qCB", "_blank");
   };
 
   return (
@@ -60,7 +60,7 @@ export default function App() {
             <Mountain className="w-5 h-5 group-hover:rotate-12 transition-transform opacity-80" />
             <span className="opacity-90 group-hover:opacity-100 transition-opacity">ENGENHARIA DO DESTINO</span>
           </div>
-          <Button variant="secondary" className="hidden md:flex py-2 px-6 text-[10px]" onClick={scrollToPricing}>
+          <Button variant="secondary" className="hidden md:flex py-2 px-6 text-[10px]" onClick={handleCheckout}>
             Acessar
           </Button>
         </div>
@@ -125,7 +125,7 @@ export default function App() {
             transition={{ delay: 0.8 }}
             className="flex flex-col md:flex-row gap-4 justify-center items-center pt-8 w-full md:w-auto"
           >
-            <Button onClick={scrollToPricing} className="w-full md:w-auto shadow-xl shadow-brand-gold/10">{HERO_CONTENT.cta}</Button>
+            <Button onClick={handleCheckout} className="w-full md:w-auto shadow-xl shadow-brand-gold/10">{HERO_CONTENT.cta}</Button>
             <span className="text-[10px] md:text-xs text-brand-text/80 font-mono tracking-[0.2em] uppercase border-l border-white/20 pl-4 ml-2 hidden md:block drop-shadow-md">Versão Digital <br/> Acesso Imediato</span>
           </motion.div>
         </div>
@@ -518,7 +518,7 @@ export default function App() {
         </p>
         
         <div className="flex flex-col items-center gap-8">
-          <Button className="text-base px-12 py-5 w-full md:w-auto hover:scale-105" onClick={scrollToPricing}>
+          <Button className="text-base px-12 py-5 w-full md:w-auto hover:scale-105" onClick={handleCheckout}>
             GARANTIR MEU MANUAL
           </Button>
           <p className="text-[10px] font-mono text-brand-muted/30 tracking-[0.3em]">
