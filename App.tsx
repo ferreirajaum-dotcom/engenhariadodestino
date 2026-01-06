@@ -4,7 +4,7 @@ import { Button } from './components/Button';
 import { Section } from './components/Section';
 import { GlitchText } from './components/GlitchText';
 import { HolographicCard } from './components/HolographicCard';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { 
   HERO_CONTENT, 
   PROBLEM_CONTENT, 
@@ -19,7 +19,7 @@ import {
 import { Check, X, ChevronDown, Mountain, Terminal, Sparkles } from 'lucide-react';
 
 // Animation Variants
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -30,7 +30,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 
@@ -67,7 +67,20 @@ export default function App() {
       </motion.nav>
 
       {/* HERO SECTION */}
-      <div className="relative min-h-screen flex items-center justify-center px-4 md:px-6 pt-20">
+      <div className="relative min-h-screen flex items-center justify-center px-4 md:px-6 pt-20 overflow-hidden">
+        
+        {/* Background Image Setup */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://i.postimg.cc/C5M7d90b/fundositerobert.jpg" 
+            alt="Background Mountain" 
+            className="w-full h-full object-cover object-center opacity-60"
+          />
+          {/* Dark Overlay Gradient for Readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/70 via-brand-dark/50 to-brand-dark" />
+          <div className="absolute inset-0 bg-brand-dark/20 mix-blend-multiply" />
+        </div>
+
         {/* Subtle grid line decoration - Ajustado para max-w-6xl */}
         <div className="absolute top-0 bottom-0 left-[calc(50%-42rem)] w-px bg-white/5 z-0 hidden 2xl:block"></div>
         <div className="absolute top-0 bottom-0 right-[calc(50%-42rem)] w-px bg-white/5 z-0 hidden 2xl:block"></div>
@@ -77,7 +90,7 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-brand-gold/20 bg-brand-card/50 text-brand-gold font-mono text-[10px] md:text-xs tracking-[0.3em] mb-4 backdrop-blur-md uppercase"
+            className="inline-flex items-center gap-3 px-4 py-2 rounded-sm border border-brand-gold/20 bg-brand-card/60 text-brand-gold font-mono text-[10px] md:text-xs tracking-[0.3em] mb-4 backdrop-blur-md uppercase shadow-lg"
           >
             <span className="w-1.5 h-1.5 bg-brand-gold shadow-[0_0_10px_#D4A94E]"/>
             SISTEMA DE METAS V.2026
@@ -89,9 +102,9 @@ export default function App() {
              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Reduzido de text-10rem para text-7xl/8xl */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter text-brand-text leading-[0.9]">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold tracking-tighter text-brand-text leading-[0.9] drop-shadow-2xl">
               ENGENHARIA <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-brand-gold via-[#E5C575] to-[#8A6A2E] relative block mt-2 opacity-90">
+              <span className="text-transparent bg-clip-text bg-gradient-to-b from-brand-gold via-[#E5C575] to-[#8A6A2E] relative block mt-2 opacity-90 filter drop-shadow-lg">
                 <GlitchText text="DO DESTINO" />
               </span>
             </h1>
@@ -101,7 +114,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 1 }}
-            className="text-base md:text-lg text-brand-muted/80 font-light max-w-xl mx-auto leading-relaxed px-4 tracking-wide"
+            className="text-base md:text-lg text-brand-text/90 font-light max-w-xl mx-auto leading-relaxed px-4 tracking-wide drop-shadow-md"
           >
             {HERO_CONTENT.hook}
           </motion.p>
@@ -112,8 +125,8 @@ export default function App() {
             transition={{ delay: 0.8 }}
             className="flex flex-col md:flex-row gap-4 justify-center items-center pt-8 w-full md:w-auto"
           >
-            <Button onClick={scrollToPricing} className="w-full md:w-auto">{HERO_CONTENT.cta}</Button>
-            <span className="text-[10px] md:text-xs text-brand-muted/60 font-mono tracking-[0.2em] uppercase border-l border-white/10 pl-4 ml-2 hidden md:block">Versão Digital <br/> Acesso Imediato</span>
+            <Button onClick={scrollToPricing} className="w-full md:w-auto shadow-xl shadow-brand-gold/10">{HERO_CONTENT.cta}</Button>
+            <span className="text-[10px] md:text-xs text-brand-text/80 font-mono tracking-[0.2em] uppercase border-l border-white/20 pl-4 ml-2 hidden md:block drop-shadow-md">Versão Digital <br/> Acesso Imediato</span>
           </motion.div>
         </div>
 
@@ -121,7 +134,7 @@ export default function App() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 10, 0] }}
           transition={{ delay: 1.5, repeat: Infinity, duration: 3 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-brand-muted/40"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-brand-text/60"
         >
           <ChevronDown className="w-5 h-5" />
         </motion.div>
