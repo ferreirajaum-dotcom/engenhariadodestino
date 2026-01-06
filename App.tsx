@@ -529,7 +529,7 @@ export default function App() {
 
       <footer className="py-12 text-center text-brand-muted/30 text-[10px] border-t border-white/5 bg-black tracking-widest uppercase">
         <p>© 2024 Engenharia do Destino. Todos os direitos reservados.</p>
-        <p className="mt-2">Sonhar é humano. Executar é o que muda destinos.</p>
+        <p className="mt-2">Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos.</p>
       </footer>
     </main>
   );
