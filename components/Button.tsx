@@ -2,9 +2,10 @@ import React, { useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { motion, HTMLMotionProps } from 'framer-motion';
 
-interface ButtonProps extends HTMLMotionProps<"button"> {
+interface ButtonProps extends Omit<HTMLMotionProps<"button">, "children"> {
   variant?: 'primary' | 'secondary';
   fullWidth?: boolean;
+  children?: React.ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({ 
